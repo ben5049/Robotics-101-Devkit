@@ -1,0 +1,125 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file    usb.c
+  * @brief   This file provides code for the configuration
+  *          of the USB instances.
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2023 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "usb.h"
+
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+PCD_HandleTypeDef hpcd_USB_FS;
+
+/* USB init function */
+
+void MX_USB_PCD_Init(void)
+{
+
+  /* USER CODE BEGIN USB_Init 0 */
+
+  /* USER CODE END USB_Init 0 */
+
+  /* USER CODE BEGIN USB_Init 1 */
+
+  /* USER CODE END USB_Init 1 */
+  hpcd_USB_FS.Instance = USB;
+  hpcd_USB_FS.Init.dev_endpoints = 8;
+  hpcd_USB_FS.Init.speed = PCD_SPEED_FULL;
+  hpcd_USB_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+  hpcd_USB_FS.Init.Sof_enable = DISABLE;
+  hpcd_USB_FS.Init.low_power_enable = DISABLE;
+  hpcd_USB_FS.Init.lpm_enable = DISABLE;
+  hpcd_USB_FS.Init.battery_charging_enable = DISABLE;
+  if (HAL_PCD_Init(&hpcd_USB_FS) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USB_Init 2 */
+
+	/*
+	* PMA layout:
+	* 	BTABLE:          0x00 -  0x17 (24 bytes)
+	* 	EP0 OUT (0x00):  0x18 -  0x57 (64 bytes)
+	* 	EP0 IN  (0x80):  0x58 -  0x97 (64 bytes)
+	* 	EP1 OUT (0x01):  0x98 -  0xD7 (64 bytes)
+	* 	EP1 IN  (0x81):  0xD8 - 0x1D7 (256 bytes)
+	* 	EP1 OUT (0x02): 0x1D8 - 0x217 (64 bytes)
+	* 	EP2 IN  (0x82): 0x218 - 0x257 (64 bytes)
+	*
+	* BTABLE uses the first 24 bytes of the PMA when the USB peripheral is configured
+	* for 3 end points (EP0, EP1, EP2). For more info, see RM0440 p2008.
+	*/
+
+  HAL_PCDEx_PMAConfig(&hpcd_USB_FS, 0x00 , PCD_SNG_BUF, 0x18);  // EP0 OUT
+  HAL_PCDEx_PMAConfig(&hpcd_USB_FS, 0x80 , PCD_SNG_BUF, 0x58);  // EP0 IN
+  HAL_PCDEx_PMAConfig(&hpcd_USB_FS, 0x01 , PCD_SNG_BUF, 0x98);  // EP1 OUT: CDC OUT
+  HAL_PCDEx_PMAConfig(&hpcd_USB_FS, 0x81 , PCD_SNG_BUF, 0xD8); // EP1 IN:  CDC IN
+  HAL_PCDEx_PMAConfig(&hpcd_USB_FS, 0x02 , PCD_SNG_BUF, 0x1D0); // EP2 OUT: unused
+  HAL_PCDEx_PMAConfig(&hpcd_USB_FS, 0x82 , PCD_SNG_BUF, 0x218); // EP2 IN:  CDC CMD
+
+  /* USER CODE END USB_Init 2 */
+
+}
+
+void HAL_PCD_MspInit(PCD_HandleTypeDef* pcdHandle)
+{
+
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+  if(pcdHandle->Instance==USB)
+  {
+  /* USER CODE BEGIN USB_MspInit 0 */
+
+  /* USER CODE END USB_MspInit 0 */
+
+  /** Initializes the peripherals clocks
+  */
+    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
+    PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL;
+    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    /* USB clock enable */
+    __HAL_RCC_USB_CLK_ENABLE();
+  /* USER CODE BEGIN USB_MspInit 1 */
+
+  /* USER CODE END USB_MspInit 1 */
+  }
+}
+
+void HAL_PCD_MspDeInit(PCD_HandleTypeDef* pcdHandle)
+{
+
+  if(pcdHandle->Instance==USB)
+  {
+  /* USER CODE BEGIN USB_MspDeInit 0 */
+
+  /* USER CODE END USB_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_USB_CLK_DISABLE();
+  /* USER CODE BEGIN USB_MspDeInit 1 */
+
+  /* USER CODE END USB_MspDeInit 1 */
+  }
+}
+
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */
