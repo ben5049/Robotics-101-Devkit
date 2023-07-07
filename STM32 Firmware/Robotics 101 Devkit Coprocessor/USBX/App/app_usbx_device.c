@@ -440,7 +440,6 @@ static UINT USBD_ChangeFunction(ULONG Device_State)
 
   return status;
 }
-
 /* USER CODE BEGIN 1 */
 
 /**
