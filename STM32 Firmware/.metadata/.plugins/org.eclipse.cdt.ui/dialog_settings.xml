@@ -3,6 +3,10 @@
 	<section name="completion_proposal_size">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+		<item key="size.width" value="582"/>
+		<item key="size.height" value="537"/>
+		<item key="location.x" value="690"/>
+		<item key="location.y" value="289"/>
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
 		<item key="updateReferences" value="true"/>
@@ -11,9 +15,54 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="disconnect"/>
+			<item value="HAL_I2C_ListenCpltCallback"/>
+			<item value="printg"/>
+			<item value="UX_SLAVE_CLASS_CDC_ACM_SET_AUX_LINE_STATE"/>
+			<item value="SetLineState"/>
+			<item value="printf"/>
+			<item value="pog"/>
+			<item value="SystemCoreClock"/>
+			<item value="Hello1"/>
+			<item value="HAL_UART_ErrorCallback"/>
+			<item value="PMAconfig"/>
+			<item value="PMAConfig"/>
+			<item value="pmaconfig"/>
+			<item value="MX_USB_PCD_Init"/>
+			<item value="UX_DEVICE_CONFIGURED"/>
+			<item value="ux_slave_device_state"/>
+			<item value="tx_application_define"/>
 			<item value="USBD_ChangeFunction"/>
 			<item value="system_init"/>
 			<item value="HAL_IncTick"/>
 		</list>
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.browser.opentype.OpenTypeActionSettings">
+		<item key="show_namespaces" value="true"/>
+		<item key="show_classes" value="true"/>
+		<item key="show_structs" value="true"/>
+		<item key="show_typedefs" value="true"/>
+		<item key="show_enums" value="true"/>
+		<item key="show_unions" value="true"/>
+		<item key="show_functions" value="true"/>
+		<item key="show_variables" value="true"/>
+		<item key="show_enumerators" value="true"/>
+		<item key="show_macros" value="true"/>
+		<item key="show_lowlevel" value="true"/>
+		<item key="x" value="636"/>
+		<item key="y" value="0"/>
+		<item key="width" value="649"/>
+		<item key="height" value="881"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
+		<item key="DIALOG_X_ORIGIN" value="706"/>
+		<item key="DIALOG_Y_ORIGIN" value="141"/>
+		<item key="DIALOG_WIDTH" value="526"/>
+		<item key="DIALOG_HEIGHT" value="575"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item key="size.width" value="838"/>
+		<item key="size.height" value="180"/>
 	</section>
 </section>

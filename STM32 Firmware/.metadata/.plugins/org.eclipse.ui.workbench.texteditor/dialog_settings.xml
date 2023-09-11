@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="HAL_UART_Receive_IT"/>
+		<item key="selection" value="TX_APP"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="HAL_UART_Receive_IT"/>
-			<item value="USBPD_DPM_InitOS"/>
-			<item value="sof"/>
-			<item value="USBD_DFU_APP_DEFAULT_ADD"/>
-			<item value="GetBank"/>
-			<item value="uart"/>
-			<item value="huart2"/>
-			<item value="MX_USB_PCD_Init"/>
-			<item value="USBD_ChangeFunction"/>
-			<item value="USBD_Change"/>
-			<item value="usbx_dfu_download_thread"/>
-			<item value="MX_USART2_UART_Init"/>
-			<item value="USBX_APP_STACK_SIZE"/>
-			<item value="dfu_interface_number"/>
-			<item value="pma"/>
+			<item value="tx_app"/>
+			<item value="reset"/>
+			<item value="dis"/>
+			<item value="disc"/>
+			<item value="disco"/>
+			<item value="HAL_GP"/>
+			<item value="PV"/>
+			<item value="gpio"/>
+			<item value="MX_TIM8`_Init"/>
+			<item value="MX_TIM8_Init"/>
+			<item value="MX_TIM3_Init"/>
+			<item value="I2C_RX_BUFFER_SIZE"/>
+			<item value="AF"/>
+			<item value="hi2c1"/>
+			<item value="event_flag"/>
 		</list>
 		<list key="replacehistory">
+			<item value="I2C_MESSAGE_SIZE"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="924"/>
-		<item key="DIALOG_Y_ORIGIN" value="290"/>
-		<item key="DIALOG_WIDTH" value="318"/>
-		<item key="DIALOG_HEIGHT" value="354"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-21|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_X_ORIGIN" value="1203"/>
+		<item key="DIALOG_Y_ORIGIN" value="551"/>
+		<item key="DIALOG_WIDTH" value="414"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

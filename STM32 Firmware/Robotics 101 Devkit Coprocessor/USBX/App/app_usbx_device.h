@@ -1,21 +1,4 @@
 /* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file    app_usbx_device.h
-  * @author  MCD Application Team
-  * @brief   USBX Device applicative header file
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2020-2021 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
 /* USER CODE END Header */
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __APP_USBX_DEVICE_H__
@@ -29,17 +12,15 @@ extern "C" {
 #include "ux_api.h"
 #include "ux_device_descriptors.h"
 #include "ux_device_cdc_acm.h"
-#include "ux_device_dfu_media.h"
-#include "ux_dcd_stm32.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "main.h"
 #include "ux_dcd_stm32.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -49,85 +30,23 @@ extern "C" {
 #define UX_DEVICE_APP_THREAD_PRIO         10
 
 /* USER CODE BEGIN EC */
-#define UX_CDC_ACM_READ_THREAD_STACK_SIZE   1024
-#define UX_CDC_ACM_READ_THREAD_PRIO         22
-
-#define UX_CDC_ACM_WRITE_THREAD_STACK_SIZE   1024
-#define UX_CDC_ACM_WRITE_THREAD_PRIO         22
-
-#define UX_DFU_THREAD_STACK_SIZE   1024
-#define UX_DFU_THREAD_PRIO         20
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
 UINT MX_USBX_Device_Init(VOID *memory_ptr);
 
 /* USER CODE BEGIN EFP */
-void USBX_APP_Device_Init(void);
-void USBX_APP_UART_Init(UART_HandleTypeDef **huart);
+VOID USBX_APP_Device_Init(VOID);
+VOID USBX_APP_UART_Init(UART_HandleTypeDef **huart);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
-#define APP_QUEUE_SIZE  1
-
-#ifndef UX_CDC_ACM_READ_THREAD_NAME
-#define UX_CDC_ACM_READ_THREAD_NAME  "USBX CDC ACM Read Thread"
-#endif
-
-#ifndef UX_CDC_ACM_READ_THREAD_PREEMPTION_THRESHOLD
-#define UX_CDC_ACM_READ_THREAD_PREEMPTION_THRESHOLD  UX_CDC_ACM_READ_THREAD_PRIO
-#endif
-
-#ifndef UX_CDC_ACM_READ_THREAD_TIME_SLICE
-#define UX_CDC_ACM_READ_THREAD_TIME_SLICE  TX_NO_TIME_SLICE
-#endif
-
-#ifndef UX_CDC_ACM_READ_THREAD_START_OPTION
-#define UX_CDC_ACM_READ_THREAD_START_OPTION  TX_AUTO_START
-#endif
-
-
-
-#ifndef UX_CDC_ACM_WRITE_THREAD_NAME
-#define UX_CDC_ACM_WRITE_THREAD_NAME  "USBX CDC ACM Write Thread"
-#endif
-
-#ifndef UX_CDC_ACM_WRITE_THREAD_PREEMPTION_THRESHOLD
-#define UX_CDC_ACM_WRITE_THREAD_PREEMPTION_THRESHOLD  UX_CDC_ACM_WRITE_THREAD_PRIO
-#endif
-
-#ifndef UX_CDC_ACM_WRITE_THREAD_TIME_SLICE
-#define UX_CDC_ACM_WRITE_THREAD_TIME_SLICE  TX_NO_TIME_SLICE
-#endif
-
-#ifndef UX_CDC_ACM_WRITE_THREAD_START_OPTION
-#define UX_CDC_ACM_WRITE_THREAD_START_OPTION  TX_AUTO_START
-#endif
-
-
-
-#ifndef UX_DFU_THREAD_NAME
-#define UX_DFU_THREAD_NAME  "USBX DFU Download Thread"
-#endif
-
-#ifndef UX_DFU_THREAD_PREEMPTION_THRESHOLD
-#define UX_DFU_THREAD_PREEMPTION_THRESHOLD  UX_DFU_THREAD_PRIO
-#endif
-
-#ifndef UX_DFU_THREAD_TIME_SLICE
-#define UX_DFU_THREAD_TIME_SLICE  TX_NO_TIME_SLICE
-#endif
-
-#ifndef UX_DFU_THREAD_START_OPTION
-#define UX_DFU_THREAD_START_OPTION  TX_AUTO_START
-#endif
+extern void MX_USART2_UART_Init();
 /* USER CODE END PD */
 
 #ifndef UX_DEVICE_APP_THREAD_NAME
@@ -147,7 +66,6 @@ void USBX_APP_UART_Init(UART_HandleTypeDef **huart);
 #endif
 
 /* USER CODE BEGIN 1 */
-
 /* USER CODE END 1 */
 
 #ifdef __cplusplus

@@ -96,7 +96,7 @@
    though the compiler's equivalent of the -D option.  */
 
 /* Define USBX Generic Thread Stack Size.  */
-/* #define UX_THREAD_STACK_SIZE                             (2 * 1024) */
+#define UX_THREAD_STACK_SIZE                                2*1024
 
 /* Define USBX Host Enum Thread Stack Size. The default is to use UX_THREAD_STACK_SIZE */
 /* #define UX_HOST_ENUM_THREAD_STACK_SIZE                   UX_THREAD_STACK_SIZE  */
@@ -136,7 +136,7 @@
 /* Defined, this value is the maximum number of classes in the device stack that can be loaded by
    USBX.  */
 
-#define UX_MAX_SLAVE_CLASS_DRIVER    2
+#define UX_MAX_SLAVE_CLASS_DRIVER    1
 
 /* Defined, this value represents the number of different host controllers available in the system.
    For USB 1.1 support, this value will usually be 1. For USB 2.0 support, this value can be more
@@ -170,14 +170,14 @@
 /* Defined, this value represents the maximum number of bytes received on a control endpoint in
    the device stack. The default is 256 bytes but can be reduced in memory constrained environments.  */
 
-#define UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH                 1024
+/* #define UX_SLAVE_REQUEST_CONTROL_MAX_LENGTH              256 */
 
 /* Defined, this value represents the maximum number of bytes that can be received or transmitted
    on any endpoint. This value cannot be less than the maximum packet size of any endpoint. The default
    is 4096 bytes but can be reduced in memory constrained environments. For cd-rom support in the storage
    class, this value cannot be less than 2048.  */
 
-#define UX_SLAVE_REQUEST_DATA_MAX_LENGTH                    2048
+#define UX_SLAVE_REQUEST_DATA_MAX_LENGTH                    1024
 
 /* Defined, this value includes code to handle storage Multi-Media Commands (MMC). E.g., DVD-ROM. */
 
@@ -316,7 +316,7 @@
 
 /* Defined, this macro will enable DFU_GETSTATUS and DFU_GETSTATE in dfuERROR.  */
 
-#define UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE
+/* #define UX_DEVICE_CLASS_DFU_ERROR_GET_ENABLE  */
 
 /* Defined, this macro will change status mode.
    0 - simple mode,
@@ -329,18 +329,18 @@
        bwPollTimeout supported.
 */
 
-#define UX_DEVICE_CLASS_DFU_STATUS_MODE                     1
+/* #define UX_DEVICE_CLASS_DFU_STATUS_MODE                  1 */
 
 /* Defined, this value represents the default DFU status bwPollTimeout.
    The value is 3 bytes long (max 0xFFFFFFu).
    By default the bwPollTimeout is 1 (means 1ms).
  */
 
-#define UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT              0
+/* #define UX_DEVICE_CLASS_DFU_STATUS_POLLTIMEOUT           1 */
 
 /* Defined, this macro will enable custom request process callback.  */
 
-#define UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE
+/* #define UX_DEVICE_CLASS_DFU_CUSTOM_REQUEST_ENABLE  */
 
 /* Defined, this macro disables CDC ACM non-blocking transmission support. */
 

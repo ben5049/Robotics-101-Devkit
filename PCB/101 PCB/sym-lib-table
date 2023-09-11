@@ -6,4 +6,5 @@
   (lib (name "LSM6DS3TR-C")(type "KiCad")(uri "${KIPRJMOD}/101 Symbols/LSM6DS3TR-C.kicad_sym")(options "")(descr ""))
   (lib (name "ESP32-S2-WROVER-I_M22S2H3216UH")(type "KiCad")(uri "${KIPRJMOD}/101 Symbols/ESP32-S2-WROVER-I_M22S2H3216UH.kicad_sym")(options "")(descr ""))
   (lib (name "DMP3028LFDE-7")(type "KiCad")(uri "${KIPRJMOD}/101 Symbols/DMP3028LFDE-7.kicad_sym")(options "")(descr ""))
+  (lib (name "SK34-TP")(type "KiCad")(uri "${KIPRJMOD}/101 Symbols/SK34-TP.kicad_sym")(options "")(descr ""))
 )

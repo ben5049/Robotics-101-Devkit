@@ -30,7 +30,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "main.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -44,8 +44,8 @@ extern "C" {
 /* USER CODE END EC */
 
 /* Private defines -----------------------------------------------------------*/
-#define TX_APP_STACK_SIZE                       512
-#define TX_APP_THREAD_PRIO                      10
+#define TX_APP_STACK_SIZE                       1024
+#define TX_APP_THREAD_PRIO                      15
 /* USER CODE BEGIN PD */
 
 /* USER CODE END PD */
@@ -75,10 +75,11 @@ extern "C" {
 UINT App_ThreadX_Init(VOID *memory_ptr);
 void MX_ThreadX_Init(void);
 void tx_app_thread_entry(ULONG thread_input);
+
 /* USER CODE BEGIN EFP */
-
+void reset_extra_functions();
 /* USER CODE END EFP */
-
+//extern TX_THREAD tx_app_thread;
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
